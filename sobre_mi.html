@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <!----FAVICON--------->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <!----FIN FAVICON----->
+  <meta charset="UTF-8">
+  <title>Sobre mi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="CSS/navbar.css" rel="stylesheet" type="text/css">
+   <link href="CSS/porfolio.css" rel="stylesheet" type="text/css">
+   <link href="CSS/sobre-mi.css" rel="stylesheet" type="text/css">
+ </head>
+    
+<body>
+
+<header class="top-nav">
+    <div id="brand">
+        <a href="index.html">
+            <img src="images/img-silvana/logo-silvana.png">
+            Silvana Nuñez
+        </a>
+    </div>
+
+    <input id="menu-toggle" type="checkbox" />
+    <label class="menu-button-container" for="menu-toggle">
+        <div class="menu-button"></div>
+    </label>
+
+    <ul class="menu">
+        <li><a href="packaging-sidra.html">Sidra</a></li>
+        <li><a href="packaging-vino.html">Vino</a></li>
+        <li><a href="patron.html">Patron</a></li>
+        <li><a href="imprenta.html">Imprenta</a></li>
+        <li><a href="etiketa-miel.html">Miel</a></li>
+        <li><a href="bombones.html">Bombones</a></li>
+        <li><a href="manifiesto.html">Manifiesto</a></li>
+        <li><a href="grammy.html">Cartel</a></li>
+        <li><a href="narrativa-sonora.html">Narrativa</a></li>
+        <li><a href="sobre_mi.html">Sobre mi</a></li>
+    </ul>
+</header>
+    
+     <h1>Sobre mi</h1>
+
+    <section class="container">
+      
+    <div class="primera">
+      <img src="images/foto-perfil.jpg"  alt=""/>
+      <p><a href=""> <img class="icono" src="images/mail.svg" alt=""/> silvanaelizabeth@gmail.com</a><br>
+          <a href="tel:672929069">
+          <img class="icono" src="images/tel.svg" alt=""/> 672929069</a><br>
+          <a href="pdf/curriculum-SilvanaNunez-actualizado-23-05-2024.pdf"><img class="icono" src="images/descargar.svg" alt=""/> Descargar CV</a></p>
+    </div>
+        
+    <div class="segunda">
+
+        <p id="primer">Como diseñadora web, estoy altamente capacitada en el manejo de herramientas de diseño
+            y maquetación.
+            Tengo la habilidad de crear diseños desde cero a partir de especificaciones y esquemas de
+            funcionalidad, y mi experiencia inicial en la creación de anuncios para prensa y páginas
+            amarillas me ha proporcionado una rapidez en el manejo de herramientas y una visión útil
+            del diseño.
+            <br>
+
+        </p>
+<div id="sobre-mi">
+        <form id="sobre-mi-form">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}" required>
+
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+
+            <button type="submit">Enviar</button>
+            <br>
+        </form>
+
+</div>
+         
+    </div>
+        
+   </section>
+    
+    <footer>
+
+        <p>
+            <a href="https://www.instagram.com/silvanaeli_ia/" target="_blank">
+                <img src="images/icono_instagram.svg" alt="Instagram"/>
+            </a>
+            <a href="https://www.linkedin.com/in/silvana-nu%C3%B1ez-dise%C3%B1ador-ux-ui/" target="_blank">
+                <img src="images/icono_linkedin.svg" alt="LinkedIn"/>
+            </a>
+            <a href="https://www.tiktok.com/@silvanaeli_ia" target="_blank">
+                <img src="images/icono_tiktok.svg" alt="TikTok"/>
+            </a>
+            <br>
+        </p>
+
+        
+    </footer>
+    <script>
+        document.getElementById('sobre-mi-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Validate form fields
+            let nombre = document.getElementById('nombre').value.trim();
+            let email = document.getElementById('email').value.trim();
+            let telefono = document.getElementById('telefono').value.trim();
+            let descripcion = document.getElementById('descripcion').value.trim();
+
+            if (!nombre) {
+                alert('Por favor, ingresa tu nombre.');
+                return;
+            }
+
+            if (!email || !validateEmail(email)) {
+                alert('Por favor, ingresa un email válido.');
+                return;
+            }
+
+            if (!telefono || !/^\d{10}$/.test(telefono)) {
+                alert('Por favor, ingresa un número de teléfono válido (10 dígitos).');
+                return;
+            }
+
+            if (!descripcion) {
+                alert('Por favor, ingresa una descripción.');
+                return;
+            }
+
+            alert('Formulario enviado con éxito!');
+            // Here you can add the code to actually submit the form data, e.g., using AJAX.
+        });
+
+        function validateEmail(email) {
+            // Simple email validation regex
+            let re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            return re.test(email);
+        }
+    </script>
+
+</body>
+    
+</html>
